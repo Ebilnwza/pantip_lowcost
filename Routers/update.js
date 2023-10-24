@@ -18,7 +18,6 @@ router.post('/post',async(req,res)=>{
     const id=  req.body.id;
     const content =  req.body.content
     const title =  req.body.title
-    console.log(content,title);
     try{
         await postsmodel.findByIdAndUpdate(id,{title: title, content:content} ,{new: true});
     }catch(error){
